@@ -1,6 +1,5 @@
-# Data files (too large for GitHub)
+# Raw data only (original CSV — do not share)
 data/raw/
-data/processed/
 
 # Jupyter checkpoints
 .ipynb_checkpoints/
@@ -10,9 +9,6 @@ data/processed/
 __pycache__/
 *.pyc
 *.pyo
-
-# Model files (can be large)
-models/*.pkl
 
 # Environment
 .env
