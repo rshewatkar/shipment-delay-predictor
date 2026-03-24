@@ -52,7 +52,7 @@ with col1:
 
     gender = st.selectbox(
         "Customer Gender",
-        options=['m', 'f']
+        options=['F', 'M']
     )
 
     weight_in_gms = st.slider(
@@ -141,8 +141,8 @@ if predict_btn:
     #  Predict 
     prediction = model.predict(input_df)[0]
     probability = model.predict_proba(input_df)[0]
-    delay_prob  = round(probability[1] * 100, 1)
-    ontime_prob = round(probability[0] * 100, 1)
+    delay_prob  = round(float(probability[1]) * 100, 1)
+    ontime_prob = round(float(probability[0]) * 100, 1)
 
     st.divider()
 
@@ -156,10 +156,10 @@ if predict_btn:
             st.success("### ✅ Likely ON TIME")
 
     with res_col2:
-        st.metric(label="Delay Risk",   value=f"{delay_prob}%")
+        st.metric(label="Delay Risk",   value=f"{delay_prob:.1f}%")
 
     with res_col3:
-        st.metric(label="On-Time Chance", value=f"{ontime_prob}%")
+        st.metric(label="On-Time Chance", value=f"{ontime_prob:.1f}%")
 
     st.divider()
 
