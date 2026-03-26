@@ -98,9 +98,9 @@ cd app
 streamlit run app.py
 ```
 
-> ![alt text](image.png)
->![alt text](image-1.png)
->![alt text](image-2.png)
+![Dashboard Main](reports/screenshots/dashboard-main.png)
+![Dashboard Result](reports/screenshots/dashboard-result.png)
+![Dashboard Risk](reports/screenshots/dashboard-risk.png)
 
 ## 🗂️ Project Structure
 
@@ -132,23 +132,29 @@ shipment-delay-predictor/
 │   └── scaler.pkl                # StandardScaler for numerical columns
 │
 ├── reports/
-│   └── figures/                  # All EDA and model evaluation charts
-│       ├── 01_target_distribution.png
-│       ├── 02_delay_by_warehouse.png
-│       ├── 03_delay_by_mode.png
-│       ├── 04_discount_effect.png
-│       ├── 05_weight_effect.png
-│       ├── 06_customer_calls.png
-│       ├── 07_correlation_heatmap.png
-│       ├── 08_model_comparison.png
-│       ├── 09_confusion_matrix.png
-│       ├── 10_roc_curve.png
-│       └── 11_feature_importance.png
+│   ├── figures/                  # All EDA and model evaluation charts
+│   │   ├── 01_target_distribution.png
+│   │   ├── 02_delay_by_warehouse.png
+│   │   ├── 03_delay_by_mode.png
+│   │   ├── 04_discount_effect.png
+│   │   ├── 05_weight_effect.png
+│   │   ├── 06_customer_calls.png
+│   │   ├── 07_correlation_heatmap.png
+│   │   ├── 08_model_comparison.png
+│   │   ├── 09_confusion_matrix.png
+│   │   ├── 10_roc_curve.png
+│   │   └── 11_feature_importance.png
+│   │
+│   └── scrennshots/              # All screenshots added here of stramlit dashborad
+│       ├── dashboard-main.png
+│       ├── dashboard-result.png
+│       ├── dashboard-risk.png
 │
 ├── app/
 │   └── app.py                    # Streamlit dashboard
 │
 ├── .gitignore
+├── LICENSE
 ├── requirements.txt
 └── README.md
 ```
