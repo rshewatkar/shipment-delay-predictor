@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
-import os
+from pathlib import Path
 
 # Page config 
 st.set_page_config(
@@ -14,9 +14,12 @@ st.set_page_config(
 #  Load model and encoders 
 @st.cache_resource
 def load_artifacts():
-    model    = joblib.load('../models/best_model.pkl')
-    encoders = joblib.load('../models/label_encoders.pkl')
-    scaler   = joblib.load('../models/scaler.pkl')
+    base_dir = Path(__file__).resolve().parent.parent
+    models_dir = base_dir / "models"
+
+    model = joblib.load(models_dir / "best_model.pkl")
+    encoders = joblib.load(models_dir / "label_encoders.pkl")
+    scaler = joblib.load(models_dir / "scaler.pkl")
     return model, encoders, scaler
 
 model, label_encoders, scaler = load_artifacts()
