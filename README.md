@@ -1,3 +1,16 @@
+---
+title: Shipment Delay Predictor
+emoji: 🚚
+colorFrom: blue
+colorTo: green
+sdk: streamlit
+sdk_version: "1.32.0"
+python_version: "3.10"
+app_file: app.py
+pinned: false
+---
+
+
 # 🚚 Shipment Delay Predictor
 
 A complete end-to-end Machine Learning project that predicts whether a shipment will be delayed — before it leaves the warehouse.

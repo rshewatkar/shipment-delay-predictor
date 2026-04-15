@@ -14,8 +14,19 @@ st.set_page_config(
 #  Load model and encoders 
 @st.cache_resource
 def load_artifacts():
-    base_dir = Path(__file__).resolve().parent.parent
-    models_dir = base_dir / "models"
+    current_dir = Path(__file__).resolve().parent
+    models_dir = None
+
+    for candidate in [current_dir, *current_dir.parents]:
+        candidate_models_dir = candidate / "models"
+        if candidate_models_dir.exists():
+            models_dir = candidate_models_dir
+            break
+
+    if models_dir is None:
+        raise FileNotFoundError(
+            f"Could not find a 'models' directory starting from {current_dir}"
+        )
 
     model = joblib.load(models_dir / "best_model.pkl")
     encoders = joblib.load(models_dir / "label_encoders.pkl")
